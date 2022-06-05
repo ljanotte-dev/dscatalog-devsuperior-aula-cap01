@@ -28,7 +28,7 @@ public class Product implements Serializable {
 	
 	@Column(columnDefinition = "TEXT")
 	private String description;
-	private Double price;
+	private double price;
 	private String imgUrl;
 
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
@@ -36,14 +36,14 @@ public class Product implements Serializable {
 
 	@ManyToMany
 	@JoinTable(name = "tb_product_category",
-			joinColumns = @JoinColumn(name = "product_id"),
-			inverseJoinColumns = @JoinColumn(name = "category_id"))
+		joinColumns = @JoinColumn(name = "product_id"),
+		inverseJoinColumns = @JoinColumn(name = "category_id"))
 	Set<Category> categories = new HashSet<>();
 
 	public Product() {
 	}
 
-	public Product(Long id, String name, String description, Double price, String imgUrl, Instant date) {
+	public Product(Long id, String name, String description, double price, String imgUrl, Instant date) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -76,11 +76,11 @@ public class Product implements Serializable {
 		this.description = description;
 	}
 
-	public Double getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
